@@ -1,6 +1,6 @@
 # Major Research Contributions from HHMI Authors
 
-A method for identifiying scholarly works in Lens.org with major contibutions from Howard Hughes Medical Institute (HHMI) affiliated authors.
+A method for identifying scholarly works in Lens.org with major contributions from Howard Hughes Medical Institute (HHMI) affiliated authors.
 
 HHMI identifies major contributions to research publications as scholarly works with HHMI affiliated authors that are either:
 1. First author, or 
