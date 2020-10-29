@@ -13,10 +13,17 @@ Any of these conditions are considered a major contribution by HHMI. The below s
 
 ### 1. Create a query for all scholarly works with HHMI affiliations
 
-* Run the following query on Lens.org: author.affiliation.name:("HHMI") OR author.affiliation.name:("Howard Hughes Medical Institute") OR author.affiliation.name:("Janelia Research Campus") and filter for Year Published = ( 2019 - 2020 ) - [https://link.lens.org/HBk5WkGstph](https://link.lens.org/HBk5WkGstph)
+* Run the following query on Lens.org: `author.affiliation.name:("HHMI") OR author.affiliation.name:("Howard Hughes Medical Institute") OR author.affiliation.name:("Janelia Research Campus")` and filter for `Year Published = ( 2019 - 2020 )` - see [https://link.lens.org/HBk5WkGstph](https://link.lens.org/HBk5WkGstph)
 * Export the results in JSON format. **NB** You must be logged in to export your results.
 
 ### 2. Run the following [JQuery](https://jquery.com/) command on the JSON export file
 
-* `jq '.[] | select(.authors | [.[0,-1], .[]] | [.[].affiliations | select(. != null) | .[].name | select(contains("HHMI") or contains("Howard Hughes Medical Institute") or contains("Janelia Research Campus"))] | length > 2)'`
-* This will generate the following output file.
+* `jq --raw-output '.[] | select(.authors | [.[0,-1], .[]] | [.[].affiliations | select(. != null) | .[].name | select(contains("HHMI") or contains("Howard Hughes Medical Institute") or contains("Janelia Research Campus"))] | length > 2) | .lens_id' ~/Downloads/HHMI-2019-2020.json`
+* This will generate an output file of `Lens IDs` for scholarly works matching the criteria for major contributions from HHMI authors.
+
+### 3. Create a Lens collection
+
+* The `Lens IDs` can then be imported into a [collection](https://www.lens.org/lens/search/scholar/list?collectionId=184091) on Lens.org for further analysis or export. 
+* The collection can also be queried to identify the scholarly works with first/last HHMI authors:
+  - HHMI first authors: [author_first.affiliation.name:("Howard Hughes Medical Institute" OR  "HHMI" OR "Janelia Research Campus")](https://link.lens.org/SztavRfCsyi)
+  - HHMI last authors: [author_last.affiliation.name:("Howard Hughes Medical Institute" OR  "HHMI" OR "Janelia Research Campus")](https://link.lens.org/WftDLlu6Hok)
