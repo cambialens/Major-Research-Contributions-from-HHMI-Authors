@@ -17,7 +17,7 @@ Any of these conditions are considered a major contribution by HHMI. The below s
 * Export the results in JSON format (e.g. [HHMI-2019-2020.json](https://github.com/cambialens/Major-Research-Contributions-from-HHMI-Authors/blob/main/HHMI-2019-2020.json)). 
   - **NB** You must be logged in to export your results.
 
-### 2. Run the following [JQuery](https://jquery.com/) command on the JSON export file
+### 2. Run the following [jq](https://stedolan.github.io/jq/) command on the JSON export file
 
 * `jq --raw-output '.[] | select(.authors | [.[0,-1], .[]] | [.[].affiliations | select(. != null) | .[].name | select(contains("HHMI") or contains("Howard Hughes Medical Institute") or contains("Janelia Research Campus"))] | length > 2) | .lens_id' ~/HHMI-2019-2020.json`
 * This will generate an [output file](https://github.com/cambialens/Major-Research-Contributions-from-HHMI-Authors/blob/main/hhmi_lensids.txt) of `Lens IDs` for scholarly works matching the criteria for major contributions from HHMI authors.
