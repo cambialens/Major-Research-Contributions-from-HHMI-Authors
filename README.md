@@ -14,7 +14,8 @@ Any of these conditions are considered a major contribution by HHMI. The below s
 ### 1. Create a query for all scholarly works with HHMI affiliations
 
 * Run the following query on Lens.org: `author.affiliation.name:("HHMI") OR author.affiliation.name:("Howard Hughes Medical Institute") OR author.affiliation.name:("Janelia Research Campus")` and filter for `Year Published = ( 2019 - 2020 )` - see [https://link.lens.org/HBk5WkGstph](https://link.lens.org/HBk5WkGstph)
-* Export the results in JSON format. **NB** You must be logged in to export your results.
+* Export the results in JSON format (e.g. [HHMI-2019-2020.json](https://github.com/cambialens/Major-Research-Contributions-from-HHMI-Authors/blob/main/HHMI-2019-2020.json)). 
+  - **NB** You must be logged in to export your results.
 
 ### 2. Run the following [JQuery](https://jquery.com/) command on the JSON export file
 
