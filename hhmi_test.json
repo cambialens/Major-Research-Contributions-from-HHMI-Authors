@@ -1,0 +1,42 @@
+[{
+    "lens_id": "1",
+    "authors": [
+        {"affiliations": [{"name": "Howard Hughes Medical Institute"}]},
+        {"affiliations": [{"name": "NOT"}]},
+        {"affiliations": [{"name": "NOT"}]}
+    ]
+},
+{
+    "lens_id": "2",
+    "authors": [
+        {"affiliations": [{"name": "NOT"}]},
+        {"affiliations": [{"name": "Howard Hughes Medical Institute"}]},
+        {"affiliations": [{"name": "Howard Hughes Medical Institute"}]},
+        {"affiliations": [{"name": "NOT"}]}
+    ]
+},
+{
+    "lens_id": "3",
+    "authors": [
+        {"affiliations": [{"name": "NOT"}]},
+        {"affiliations": [{"name": "Howard Hughes Medical Institute"}]}
+    ]
+},
+{
+    "lens_id": "4",
+    "authors": [
+        {"affiliations": [{"name": "NOT"}]},
+        {"affiliations": [{"name": "Howard Hughes Medical Institute"}]},
+        {"affiliations": [{"name": "Howard Hughes Medical Institute"}]},
+        {"affiliations": [{"name": "Howard Hughes Medical Institute"}]},
+        {"affiliations": [{"name": "NOT"}]}
+    ]
+},
+{
+    "lens_id": "not",
+    "authors": [
+        {"affiliations": [{"name": "NOT"}]},
+        {"affiliations": [{"name": "Howard Hughes Medical Institute"}]},
+        {"affiliations": [{"name": "NOT"}]}
+    ]
+}]
