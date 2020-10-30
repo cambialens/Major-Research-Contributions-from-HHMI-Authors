@@ -17,10 +17,18 @@ Any of these conditions are considered a major contribution by HHMI. The below s
 * Export the results in JSON format (e.g. [HHMI-2019-2020.json](https://github.com/cambialens/Major-Research-Contributions-from-HHMI-Authors/blob/main/HHMI-2019-2020.json)). 
   - **NB** You must be logged in to export your results.
 
-### 2. Run the following [jq](https://stedolan.github.io/jq/) command on the JSON export file
+### 2.Extract the Lens IDs from the JSON export file
 
-* `jq --raw-output '.[] | select(.authors | [.[0,-1], .[]] | [.[].affiliations | select(. != null) | .[].name | select(contains("HHMI") or contains("Howard Hughes Medical Institute") or contains("Janelia Research Campus"))] | length >= 2) | .lens_id' ~/HHMI-2019-2020.json`
-* This will generate an [output file](https://github.com/cambialens/Major-Research-Contributions-from-HHMI-Authors/blob/main/hhmi_lensids.txt) of `Lens IDs` for scholarly works matching the criteria for major contributions from HHMI authors.
+* Run either of:
+  * The [jq](https://stedolan.github.io/jq/) command line utility:
+     ```
+     jq --raw-output '.[] | select(.authors | [.[0,-1], .[]] | [.[].affiliations | select(. != null) | .[].name | select(contains("HHMI") or contains("Howard Hughes Medical Institute") or contains("Janelia Research Campus"))] | length >= 2) | .lens_id' ~/HHMI-2019-2020.json
+     ```
+  * or if you prefer, the Python script:     
+     ```
+     python hhmi_contributions.py < ~/HHMI-2019-2020.json`
+     ```
+* Either of these commands will generate a list of `Lens IDs` for scholarly works matching the criteria for major contributions from HHMI authors - like the list in [hhmi_lensids.txt](hhmi_lensids.txt). 
 
 ### 3. Create a Lens collection
 
