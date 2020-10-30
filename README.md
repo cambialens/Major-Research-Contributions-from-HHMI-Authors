@@ -19,7 +19,7 @@ Any of these conditions are considered a major contribution by HHMI. The below s
 
 ### 2. Run the following [jq](https://stedolan.github.io/jq/) command on the JSON export file
 
-* `jq --raw-output '.[] | select(.authors | [.[0,-1], .[]] | [.[].affiliations | select(. != null) | .[].name | select(contains("HHMI") or contains("Howard Hughes Medical Institute") or contains("Janelia Research Campus"))] | length > 2) | .lens_id' ~/HHMI-2019-2020.json`
+* `jq --raw-output '.[] | select(.authors | [.[0,-1], .[]] | [.[].affiliations | select(. != null) | .[].name | select(contains("HHMI") or contains("Howard Hughes Medical Institute") or contains("Janelia Research Campus"))] | length >= 2) | .lens_id' ~/HHMI-2019-2020.json`
 * This will generate an [output file](https://github.com/cambialens/Major-Research-Contributions-from-HHMI-Authors/blob/main/hhmi_lensids.txt) of `Lens IDs` for scholarly works matching the criteria for major contributions from HHMI authors.
 
 ### 3. Create a Lens collection
